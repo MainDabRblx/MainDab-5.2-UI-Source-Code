@@ -1,0 +1,132 @@
+-- Client sided chat GUI by omgcool2#9013
+-- https://cdn.discordapp.com/attachments/838794517195915265/868838630028902410/ShareX_UeeWf8fx41.png
+
+local FakeChat = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Chat = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local welcome = Instance.new("TextLabel")
+local UICorner_3 = Instance.new("UICorner")
+local Username = Instance.new("TextBox")
+local UICorner_4 = Instance.new("UICorner")
+local Message = Instance.new("TextBox")
+local UICorner_5 = Instance.new("UICorner")
+local Close = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+
+--Properties:
+
+FakeChat.Name = "FakeChat"
+FakeChat.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+FakeChat.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = FakeChat
+Frame.BackgroundColor3 = Color3.fromRGB(114, 255, 180)
+Frame.Position = UDim2.new(0.197963804, 0, 0.116861433, 0)
+Frame.Size = UDim2.new(0, 534, 0, 459)
+
+UICorner.Parent = Frame
+
+Chat.Name = "Chat"
+Chat.Parent = Frame
+Chat.BackgroundColor3 = Color3.fromRGB(60, 70, 255)
+Chat.Position = UDim2.new(0.0393258445, 0, 0.762527227, 0)
+Chat.Size = UDim2.new(0, 493, 0, 89)
+Chat.Font = Enum.Font.PermanentMarker
+Chat.Text = "Chat"
+Chat.TextColor3 = Color3.fromRGB(0, 0, 0)
+Chat.TextScaled = true
+Chat.TextSize = 14.000
+Chat.TextWrapped = true
+Chat.MouseButton1Click:Connect(function()
+	if Username.Text == "" then
+		Chat.Text = "You Must Put A Username It Can't Be nil"
+		wait(3)
+		Chat.Text = "Chat"
+		else
+	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
+		Text = "[" .. Username.Text .. "]: " .. Message.Text;
+		Color = Color3.new(1, 1, 1);
+		FontSize = Enum.FontSize.Size24;
+	})
+	end
+end)
+
+UICorner_2.Parent = Chat
+
+welcome.Name = "welcome"
+welcome.Parent = Frame
+welcome.BackgroundColor3 = Color3.fromRGB(252, 255, 57)
+welcome.Position = UDim2.new(0.131086141, 0, -0.0392156877, 0)
+welcome.Size = UDim2.new(0, 394, 0, 50)
+welcome.Font = Enum.Font.Cartoon
+welcome.Text = "Welcome To Client-Sided Fake Chat Script"
+welcome.TextColor3 = Color3.fromRGB(0, 0, 0)
+welcome.TextScaled = true
+welcome.TextSize = 14.000
+welcome.TextWrapped = true
+
+UICorner_3.Parent = welcome
+
+Username.Name = "Username"
+Username.Parent = Frame
+Username.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Username.Position = UDim2.new(0.0393258445, 0, 0.130718961, 0)
+Username.Size = UDim2.new(0, 493, 0, 97)
+Username.ClearTextOnFocus = false
+Username.Font = Enum.Font.Cartoon
+Username.Text = "Username That Will Chat Here"
+Username.TextColor3 = Color3.fromRGB(0, 0, 0)
+Username.TextScaled = true
+Username.TextSize = 14.000
+Username.TextWrapped = true
+
+UICorner_4.Parent = Username
+
+Message.Name = "Message"
+Message.Parent = Frame
+Message.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Message.Position = UDim2.new(0.0374531858, 0, 0.455337733, 0)
+Message.Size = UDim2.new(0, 493, 0, 97)
+Message.ClearTextOnFocus = false
+Message.Font = Enum.Font.Cartoon
+Message.Text = "Message"
+Message.TextColor3 = Color3.fromRGB(0, 0, 0)
+Message.TextScaled = true
+Message.TextSize = 14.000
+Message.TextWrapped = true
+
+UICorner_5.Parent = Message
+
+Close.Name = "Close"
+Close.Parent = Frame
+Close.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Close.Position = UDim2.new(0.928838968, 0, -1.65309757e-08, 0)
+Close.Size = UDim2.new(0, 38, 0, 40)
+Close.Font = Enum.Font.ArialBold
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close.TextScaled = true
+Close.TextSize = 14.000
+Close.TextWrapped = true
+
+UICorner_6.Parent = Close
+
+-- Scripts:
+
+local function DMHEZ_fake_script() -- Close.LocalScript 
+	local script = Instance.new('LocalScript', Close)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent:Destroy()
+	end)
+end
+coroutine.wrap(DMHEZ_fake_script)()
+local function IZGNJ_fake_script() -- Frame.LocalScript 
+	local script = Instance.new('LocalScript', Frame)
+
+	script.Parent.Active = true
+	script.Parent.Draggable = true
+end
+coroutine.wrap(IZGNJ_fake_script)()

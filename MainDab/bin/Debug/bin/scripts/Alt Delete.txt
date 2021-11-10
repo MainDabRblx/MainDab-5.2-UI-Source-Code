@@ -1,0 +1,23 @@
+-- Alt + Click to delete object
+-- https://github.com/MainDabRblx/ProjectDab/blob/master/roblox.png?raw=true
+local Plr = game:GetService("Players").LocalPlayer
+local Mouse = Plr:GetMouse()
+ 
+Mouse.Button1Down:connect(function()
+if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftAlt) then return end
+if not Mouse.Target then return end
+Mouse.Target:Destroy()
+end)''' comment lol 
+hi
+'''
+choice = input("Please type the letter a or b in lowercase: ")
+if choice == "a":  	    #first choice
+    print ("Well done! You have entered the letter A") 
+elif choice == "b": 	#second choice 
+    print ("Well done! You have entered the letter B")
+elif choice == "c"      #third choice 
+    print ("Well done! You have entered the letter C")
+elif choice == "d"      #forth choice   
+    print ("Well done! You have entered the letter D") 
+else: 				    #if neither choice has been selected
+    print("You did not enter a valid choice as instructed")
